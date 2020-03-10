@@ -1,0 +1,28 @@
+.header {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    background: #f7f7f7;
+  
+    .logo-container {
+      align-self: center;
+      width: 70px;
+      padding: 25px;
+    }
+  
+    .options {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  
+      .option {
+        padding: 10px 15px;
+      }
+    }
+  }
+  
