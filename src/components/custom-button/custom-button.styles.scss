@@ -4,11 +4,23 @@
     padding         : 10px;
     min-width       : 120px;
     border          : 1px solid black;
+    margin: 5px;
 
     &:hover {
         cursor    : pointer;
         border    : 1px solid black;
         background: white;
         color     : black;
+    }
+
+    &.google-sign-in {
+        background-color: #4285f4;
+        color           : white;
+        border          : none;
+
+        &:hover {
+            background-color: #357ae8;
+
+        }
     }
 }

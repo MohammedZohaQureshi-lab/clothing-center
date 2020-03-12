@@ -1,8 +1,12 @@
-body{
+body {
   font-family: "Open Sans Condensed";
-  padding: 10px 30px;
 }
-a{
+
+a {
   color: #000;
   text-decoration: none;
+}
+
+.App .app-content {
+  padding: 10px 30px;
 }
