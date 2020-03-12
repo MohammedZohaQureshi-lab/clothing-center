@@ -1,0 +1,47 @@
+@mixin shrink {
+    position : absolute;
+    left     : 5px;
+    top      : 12px;
+    color    : black;
+    font-size: 12px;
+    z-index  : 0;
+}
+
+.form-input-container {
+    display      : block;
+    position     : relative;
+    padding      : 2rem 0 0 0;
+    margin-bottom: 1rem;
+
+    input[type="email"],
+    input[type="password"] {
+        padding      : 10px 10px 10px 5px;
+        border       : none;
+        border-bottom: 1px solid #ccc;
+        width        : 100%;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:focus~.form-input-label {
+            @include shrink();
+        }
+    }
+
+    input[type="password"] {
+        &:focus {
+            letter-spacing: 0.3rem;
+        }
+
+    }
+
+    .form-input-label {
+        position  : absolute;
+        left      : 5px;
+        top       : 40px;
+        color     : #a09b9b;
+        z-index   : -1;
+        transition: 300ms ease all;
+    }
+}
