@@ -21,7 +21,8 @@ class App extends Component {
 
   componentDidMount() {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user })
+      this.setState({ currentUser: user });
+      console.log(user)
     })
   }
 

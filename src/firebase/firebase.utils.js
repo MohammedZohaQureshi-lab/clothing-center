@@ -22,6 +22,28 @@ export const firestore = firebase.firestore();
 //for google authentication utils
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithGoogle = () => auth.signInWithPopup(provider)
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
+//Storage
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+    if (!userAuth) return;
+    else{
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+firestore.collection('users').doc('O5Dlg2cYbyM2ms2oWyyD').collection('cartitems').doc('Nfc26xrWPMm56JJET9tL');
+firestore.doc('/users/O5Dlg2cYbyM2ms2oWyyD/cartitmes/Nfc26xrWPMm56JJET9tL');
+firestore.collection('/users/O5Dlg2cYbyM2ms2oWyyD/cartitmes');
 export default firebase;
