@@ -30,8 +30,7 @@ class SignIn extends Component {
         <form onSubmit={event => this.handleSubmit}>
           <FormInput
             name="email"
-            label="Email"
-            placeholder="Email"
+            label="Email"            
             type="email"
             value={this.state.email}
             required
@@ -40,8 +39,7 @@ class SignIn extends Component {
 
           <FormInput
             name="password"
-            label="Password"
-            placeholder="Password"
+            label="Password"           
             value={this.state.password}
             type="password"
             handleChange={this.handleChange}
