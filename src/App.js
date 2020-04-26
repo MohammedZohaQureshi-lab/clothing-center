@@ -6,7 +6,9 @@ import SignInAndSignUp from './page/sign-in-and-sign-up/sign-in-and-sign-up.comp
 import ShopPage from './page/shop/shop.component';
 
 import Header from './components/header/header.component';
-import { auth,  createUserDatabase } from './firebase/firebase.utils';
+import { auth, createUserDatabase } from './firebase/firebase.utils';
+import { connect } from 'react-redux';
+import {setCurrentUser} from './redux/user/user.actions'
 
 
 
@@ -25,19 +27,19 @@ class App extends Component {
         const userRef = await createUserDatabase(userAuth);
         userRef.onSnapshot(snapShot => {
           this.setState({
-            currentUser:{
-              id:snapShot.id,
+            currentUser: {
+              id: snapShot.id,
               ...snapShot.data()
             }
-          },()=>console.log(this.state))
-          
+          }, () => console.log(this.state))
+
         })
       }
 
-      else{
+      else {
         this.setState({ currentUser: userAuth });
       }
-      
+
 
     })
   }
@@ -54,6 +56,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/Shop" component={ShopPage} />
+            <Route exact path="/Contact" component={HomePage} />
             <Route exact path="/SignIn" component={SignInAndSignUp} />
           </Switch>
         </div>
@@ -61,5 +64,8 @@ class App extends Component {
     );
   }
 }
+const mapDispatchToProp=(dispatch)=>({
+  setCurrentUser:user=> dispatch(setCurrentUser(user))
+})
 
-export default App;
+export default connect(null,mapDispatchToProp)(App);
